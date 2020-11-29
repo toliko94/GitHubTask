@@ -1,0 +1,23 @@
+
+
+.contain{
+    width: 80%;
+    margin: 0  auto;
+
+}
+
+
+nav {
+    
+        margin-right: 80%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      li {
+        display: inline;
+    }
+ nav {
+     float: right;
+ }
