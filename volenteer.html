@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+
+    <script src="volenteer.js"></script>
+</head>
+<body>
+    <h1> from </h1>
+        <div id="formContainer">
+            <div id="header"></div>
+        
+           <input type="email" placeholder="email" id="email"/>
+           <input type="password" placeholder="password" id="password"/>
+
+           <button onclick="singUp()" id="singUp"> singUp </button>
+           <button onclick="singIn()" id="singIn"> singIn </button>
+           <button onclick="singOut()" id="singOut"> singOut </button>
+        </div>
+</body>
+</html>
