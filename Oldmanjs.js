@@ -13,18 +13,19 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  
 
 
   const auth = firebase.auth();
 
     function singUp()
     {
-        var email = document.getElementById("email");
-        var password = document.getElementById("password");
-        
-        const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-        promise.catch(e => alert(e.message));
+       
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+
+    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+    promise.catch(e => alert(e.message));
         alert("Signed Up");
     }
   
