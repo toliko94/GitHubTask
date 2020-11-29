@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OldMan Page</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+    <script src="Oldman.js"></script>
+
+</head>
+
+
+<body>
+
+    <h1 class="title1"> Old Man Sing Up \ Log in </h1>
+
+    <div id="formContainer">
+        <div id="header"> </div> 
+            
+            <input type="email" placeholder="אימייל" id="email"/>
+            <input type="password" placeholder="סיסמא" id="password"/>
+
+            <button onclick="singUp()" id="singUp"> הירשם </button>
+            <button onclick="singIp()" id="singIp"> התחבר </button>
+            <button onclick="singOut()" id="singOut"> התנתק </button>
+    </div>
+
+
+</body>
+</html>
