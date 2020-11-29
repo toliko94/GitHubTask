@@ -8,21 +8,51 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDDyo3rtSkUIA5L9ixFqs13TulEnIPM3UI",
+            authDomain: "wepo4u-project-22.firebaseapp.com",
+            databaseURL: "https://wepo4u-project-22.firebaseio.com",
+            projectId: "wepo4u-project-22",
+            storageBucket: "wepo4u-project-22.appspot.com",
+            messagingSenderId: "859760012059",
+            appId: "1:859760012059:web:0aff433aea5b8dac1801be",
+            measurementId: "G-CYS41V24S2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+  const auth = firebase.auth();
+    function signUp() {
+        //document.getElementById("signUp").innerHTML = "YOU CLICKED ME!";
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        console.log(email.vlaue,password.value);
+        const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
+        console.log(promise);
+        promise.catch(e => alert(e.message));
+    
+    alert("Signed In");
+  }
+        
+        
+    </script>
 
-
-    <script src="volenteer.js"></script>
+    
+    <!-- <script src="volenteer.js"></script> -->
 </head>
 <body>
+    
     <h1> from </h1>
         <div id="formContainer">
             <div id="header"></div>
-        
+            
            <input type="email" placeholder="email" id="email"/>
            <input type="password" placeholder="password" id="password"/>
 
-           <button onclick="singUp()" id="singUp"> singUp </button>
-           <button onclick="singIn()" id="singIn"> singIn </button>
-           <button onclick="singOut()" id="singOut"> singOut </button>
+           <button onclick="signUp()" id="signUp"> signUp </button>
+           <!-- <button onclick="signIn()" id="signIn"> singIn </button>
+           <button onclick="signOut()" id="signOut"> singOut </button> -->
         </div>
 </body>
 </html>
