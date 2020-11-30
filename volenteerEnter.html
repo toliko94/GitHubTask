@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <div class="Logo">
-            <img  src="Logo.png" alt="">
-        </div>
-        
-        <div class="contain">
-            <link rel="stylesheet" href="volenteerCSS.css">
+<head>
+    <link rel="stylesheet" href="volenteerCSS.css">
 
-    
-            <nav>
-                  <li><a href="#about">צור קשר</a></li>
-                  <li><a href="CompanyPolicy.html">תנאי השימוש</a></li>
-                  <li><a href="#about">עסקים</a></li>
-                  <li><a href="#ddd">הרשמה למתנדבים</a></li>
-                  <li><a href="Oldman.html">הרשמה לקשישים</a></li>
-                  <li id="Hometitle"><a href="HomePage.html">בית</a></li>
-                 
-                 
-            
-           </nav>
-           
-        </div>
-       
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-        <script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+     <script>
             function signIn(){
                     //alert("hello")
                       var email = document.getElementById("email");
@@ -73,21 +50,13 @@
                           alert("תודה שהצטרפת :)");
                     }
               
-                //   function signIn(){
-                //       var email = document.getElementById("email");
-                //       var password = document.getElementById("password");
-
-                //       const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-                //       promise.catch(e => alert(e.message));
-
-                //       alert("sign In " + email.value);
-
-                //     }
+               
 
                   function signOut(){
 
                       auth.signOut();
                       alert("התנתק")
+                      location.replace("volenteer.html")
                     }
 
                     firebase.auth().onAuthStateChanged(function(user){
@@ -95,7 +64,6 @@
                           //user is signed in.
                           var email = user.email;
                           alert("Active User " + email.value);
-                          location.replace("volenteerEnter.html")
 
                        }
                       else{
@@ -106,28 +74,33 @@
                     }
                   )
             </script>
-           
-
-            
-
-        
-        <!-- <script src="volenteer.js"></script> -->
-    </head>
-    <body>
-        
-        
-        <h1> from </h1>
-            <div id="formContainer">
-                <div id="header"></div>
-                
-                <input type="email" placeholder="email" id="email"/>
-                <input type="password" placeholder="password" id="password"/>
-
-                <button onclick="signUp()" id="signUp"> הרשם </button>
-                <button onclick="signIn()" id="signIn"> התחבר </button>
 
 
-            </div>
-    </body>
+</head>
+
+<body>
+    <div1>
+
+    </div1>
+
+    <h1>from</h1>
+    <button onclick="signOut()" id="signOut"> התנתק </button>
     
+    <div class="contain">
+
+
+        <nav>
+              <li><a href="#about">צור קשר</a></li>
+              <li><a href="#CompanyPolicy.html">תנאי השימוש</a></li>
+              <li><a href="#about">עסקים</a></li>
+              <li><a href="#ddd">הרשמה למתנדבים</a></li>
+              <li><a href="#Oldman.html">הרשמה לקשישים</a></li>
+              <li id="Hometitle"><a href="#HomePage.html">בית</a></li>
+       </nav>
+       
+    </div>
+    
+
+    
+</body>
 </html>
