@@ -88,6 +88,7 @@
 
                       auth.signOut();
                       alert("התנתק")
+                      location.replace("HomePage.html");
                     }
 
                     firebase.auth().onAuthStateChanged(function(user){
@@ -125,6 +126,9 @@
 
                 <button onclick="signUp()" id="signUp"> הרשם </button>
                 <button onclick="signIn()" id="signIn"> התחבר </button>
+                <br>
+                <a href="TermsOfUse.html"> תקנון</a>
+              <br>
 
 
             </div>
