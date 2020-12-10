@@ -1,32 +1,4 @@
-#conectpage_oldman{
-    margin: auto;
-    font-size: large;
-}
 
-.title1{
-    font-weight: 100;
-}
-
-a{
-    font-size: 30px;
-}
-
-fieldset
-{
-    margin-left: 100px;
-<<<<<<< HEAD
-}
-
-.Oldman_title{
-    margin-left: 40%;
-
-}
-
-#formContainer{
-    
-    margin-left: 35%;
-    margin-right: 35%;
-}
 
 .contain{
     width: 80%;
@@ -106,6 +78,4 @@ nav a::before {
 nav a:hover::before {
     transform: scale(1,1);
   }
-=======
-}
->>>>>>> Boaz
+
