@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BusinessPage</title>
+    <title>HomePage</title>
 
 <!-- FIREBASE -------------------------------------------------------------------------------------->
 
@@ -31,6 +31,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  const auth = firebase.auth()
+const database = firebase.database()
 </script>
 
 
@@ -39,14 +41,14 @@
 
 <!-- JS file -->
 
-<script src=""></script>
+<script src="VolenteerSignUpJS.js"></script>
 
 
 <!-- JS files - end  -->
 
 
 <!-- CSS fiels -->
-<link rel="stylesheet" href="BusinessPage.css">
+<link rel="stylesheet" href="VolenteerSignUp.css">
 
 
 <!-- CSS fiels  end -->
@@ -78,49 +80,58 @@
         <li id="Hometitle"><a href="index.html">בית</a></li>
        
  </nav>
- <br>
- <br>
- <br>
+ 
 </div>
 
+
+<!-- CONTENT -->
 <br>
- <br>
- <br>
+<br>
+<br>
+<br>
 
-<button onclick="signOut()" id="singIp"> התנתק </button>
+<h1 class="Oldman_title">הרשמה - מתנדב</h1>
+    <div id="formContainer">
+        <div id="header"> </div> 
 
-<fieldset id="forms__input">
-    <legend>Input fields</legend>
-    <p>
-      <label for="Name">Name</label>
-      <input id="input__text" type="text" placeholder="Name">
-    </p>
-    <p>
-      <label for="input__emailaddress">Email Address</label>
-      <input id="input__emailaddress" type="email" placeholder="name@email.com">
-    </p>
-    <p>
-      <label for="input__phone">Phone Number</label>
-      <input id="input__phone" type="tel" placeholder="(999) 999-9999">
-    </p>
-  
-    <p>
-      <label for="input__text3" class="error">Error</label>
-      <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
-    </p>
-    <p>
-      <label for="input__text4" class="valid">Valid</label>
-      <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
-    </p>
-   
+        <fieldset id="forms__checkbox"> 
+            <input type="email" placeholder="אימייל" id="email"/>
+            <br>
+            <input type="password" placeholder="סיסמא" id="password"/>
+            <br> 
+            <input type="text" placeholder="שם פרטי" id="firstName"/>
+            <br>
+            <input type="text" placeholder="שם משפחה" id="lastName"/>   
+            <br>
+            <button onclick="signUp()" id="singUp"> הירשם </button>
+            <button onclick="signIn()" id="singIp"> התחבר </button>
+           
+            
+            <fieldset id="forms__select">
+                <legend>אנא בחר את המין שלך :</legend>
+                <p>
+                  <label for="select">Select</label>
+                  <select id="select">
+                    <optgroup label=":בחר מבין האפשרויות">
+                      <option>זכר</option>
+                      <option>נקבה</option>
+                      <option>אחר</option>
+                    </optgroup>
+                  </select>
+                </p>
+              </fieldset>
 
-    <a href="BusinessTerms.html"> תנאי השימוש לעסקים</a>
-    <br>
-   
-      <label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> אני קראתי ואני מאשר את התקנון</label>
+              <a href="TermsOfUse.html"> תקנון</a>
+              <br>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" required>
+            <label for="vehicle1"> אני קראתי ואני מאשר את התקנון</label><br>
+               
+                
+        </fieldset>     
+        
+    </div>
 
-    
-  </fieldset>
+    </div>
 
 
 </body>

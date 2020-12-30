@@ -1,22 +1,8 @@
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyDDyo3rtSkUIA5L9ixFqs13TulEnIPM3UI",
-    authDomain: "wepo4u-project-22.firebaseapp.com",
-    databaseURL: "https://wepo4u-project-22.firebaseio.com",
-    projectId: "wepo4u-project-22",
-    storageBucket: "wepo4u-project-22.appspot.com",
-    messagingSenderId: "859760012059",
-    appId: "1:859760012059:web:0aff433aea5b8dac1801be",
-    measurementId: "G-CYS41V24S2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
+console.log("test")
 
 
-  const auth = firebase.auth();
+
+const auth = firebase.auth();
 
   //SingUp - Function
 
@@ -50,9 +36,10 @@
     {
       auth.signOut();
       alert("התנתקת !")
-      location.replace("Oldman.html")
+      location.replace("OldmanSignUp.html")
     }
 
+    /*
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -61,9 +48,8 @@
         location.replace("OldmanEnter.html")
       } else {
         // No user is signed in.
-        alert("משתמש לא מחובר !")
+        alert("2משתמש לא מחובר !")
         
       }
     });
-
-    
+    */
