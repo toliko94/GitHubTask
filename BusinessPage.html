@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusinessPage</title>
+
+<!-- FIREBASE -------------------------------------------------------------------------------------->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAk4bsLIcI7jf9V_DqkZIo26MV4hUSPCwg",
+    authDomain: "wepo4u-team-22.firebaseapp.com",
+    projectId: "wepo4u-team-22",
+    storageBucket: "wepo4u-team-22.appspot.com",
+    messagingSenderId: "854120996905",
+    appId: "1:854120996905:web:4c6ec454ae611005797c38",
+    measurementId: "G-R8XJ878M82"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+<!-- FIREBASE - end--------------------------------------------------------------------------------------- -->
+
+
+<!-- JS file -->
+
+<script src=""></script>
+
+
+<!-- JS files - end  -->
+
+
+<!-- CSS fiels -->
+<link rel="stylesheet" href="BusinessPage.css">
+
+
+<!-- CSS fiels  end -->
+
+
+</head>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<body>
+<!-- LOGO -->
+  <div class="Logo">
+    <img  src="Logo.png" alt="">
+</div>
+
+<br>
+
+<!-- NAV - BAR -->
+<div class="contain">
+    
+  <nav>
+        <li><a href="ContactUs.html">צור קשר</a ></li>
+        <li><a href="CompanyPolicy.html">תנאי השימוש</a></li>
+        <li><a href="BusinessPage.html">עסקים</a></li>
+        <li><a href="VolenteerSignUp.html">הרשמה למתנדבים</a></li>
+        <li><a href="OldmanSignUp.html">הרשמה לקשישים</a></li>
+        <li id="Hometitle"><a href="index.html">בית</a></li>
+       
+ </nav>
+ <br>
+ <br>
+ <br>
+</div>
+
+<br>
+ <br>
+ <br>
+
+<button onclick="signOut()" id="singIp"> התנתק </button>
+
+<fieldset id="forms__input">
+    <legend>Input fields</legend>
+    <p>
+      <label for="Name">Name</label>
+      <input id="input__text" type="text" placeholder="Name">
+    </p>
+    <p>
+      <label for="input__emailaddress">Email Address</label>
+      <input id="input__emailaddress" type="email" placeholder="name@email.com">
+    </p>
+    <p>
+      <label for="input__phone">Phone Number</label>
+      <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+    </p>
+  
+    <p>
+      <label for="input__text3" class="error">Error</label>
+      <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
+    </p>
+    <p>
+      <label for="input__text4" class="valid">Valid</label>
+      <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
+    </p>
+   
+
+    <a href="BusinessTerms.html"> תנאי השימוש לעסקים</a>
+    <br>
+   
+      <label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> אני קראתי ואני מאשר את התקנון</label>
+
+    
+  </fieldset>
+
+
+</body>
+</html>
