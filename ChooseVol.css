@@ -80,3 +80,13 @@ nav a:hover::before {
     transform: scale(1,1);
   }
 
+
+.control-group1{
+    margin-left:45% ;
+}
+.control-group2{
+    margin-left:45% ;
+}
+.control-group3{
+    margin-left:45% ;
+}
