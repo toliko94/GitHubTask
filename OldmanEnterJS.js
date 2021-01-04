@@ -7,7 +7,10 @@ console.log(auth)
 
 
 
-
+function test()
+{
+  console.log(auth)
+}
 
 
 
@@ -23,6 +26,7 @@ console.log(auth)
       location.replace("OldmanSignUp.html")
     }
 
+    
 
 /*
 firebase.auth().onAuthStateChanged(function(user) {
