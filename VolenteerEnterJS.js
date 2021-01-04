@@ -52,3 +52,5 @@ const auth = firebase.auth();
         console.log('user logged out');
       }
     })
+
+    
