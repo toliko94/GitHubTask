@@ -23,13 +23,15 @@ alert("test");
             var userId = loggedUser.user.uid
             var firstName = document.getElementById("firstName").value
             var lastName = document.getElementById("lastName").value
+            var phone = document.getElementById("phone").value
     
             var newUser = {
                 userId: userId,
                 email: email,
                 firstName: firstName,
                 lastName: lastName,
-                password: password
+                password: password,
+                phone : phone
             }
             //insert user details to DB
             console.log("writen1")

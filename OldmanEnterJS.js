@@ -1,8 +1,23 @@
-console.log("test")
-
-
-
+console.log(firebase)
 const auth = firebase.auth();
+const user = firebase.auth.currentUser;
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user.uid)
+  } else {
+    // No user is signed in.
+  }
+});
+
+alert("here")
+console.log(firebase.auth().currentUser)
+
+
+
+
+
 
   //SingUp - Function
 

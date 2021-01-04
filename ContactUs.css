@@ -80,3 +80,16 @@ nav a:hover::before {
     transform: scale(1,1);
   }
 
+
+  #Msg {
+
+    height: 50px;
+  }
+
+  .MainForm{
+      margin-left: 45%;
+  }
+
+  #signOut{
+      margin-left: 45%;
+  }
