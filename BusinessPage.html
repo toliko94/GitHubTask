@@ -5,44 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BusinessPage</title>
 
-<!-- FIREBASE -------------------------------------------------------------------------------------->
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyAk4bsLIcI7jf9V_DqkZIo26MV4hUSPCwg",
-    authDomain: "wepo4u-team-22.firebaseapp.com",
-    projectId: "wepo4u-team-22",
-    storageBucket: "wepo4u-team-22.appspot.com",
-    messagingSenderId: "854120996905",
-    appId: "1:854120996905:web:4c6ec454ae611005797c38",
-    measurementId: "G-R8XJ878M82"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
-
-<!-- FIREBASE - end--------------------------------------------------------------------------------------- -->
-
-
-<!-- JS file -->
-
-<script src=""></script>
-
-
-<!-- JS files - end  -->
 
 
 <!-- CSS fiels -->
@@ -92,25 +55,28 @@
 <fieldset id="forms__input">
     <legend>Input fields</legend>
     <p>
-      <label for="Name">Name</label>
-      <input id="input__text" type="text" placeholder="Name">
+      <label for="Name">שם מלא</label>
+      <input id="FullName" type="text" placeholder="שם מלא">
     </p>
     <p>
-      <label for="input__emailaddress">Email Address</label>
-      <input id="input__emailaddress" type="email" placeholder="name@email.com">
+      <label for="input__text3" class="שם חברה">שם חברה</label>
+      <input id="Company" class="is-error" type="text" placeholder="שם החברה">
+    </p>
+
+
+    <p>
+      <label for="input__emailaddress">כתובת דואר אלקטרוני</label>
+      <input id="Email" type="email" placeholder="name@email.com">
     </p>
     <p>
-      <label for="input__phone">Phone Number</label>
-      <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+      <label for="input__phone">מספר טלפון </label>
+      <input id="Phone" type="tel" placeholder="(999) 999-9999">
     </p>
   
+
     <p>
-      <label for="input__text3" class="error">Error</label>
-      <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
-    </p>
-    <p>
-      <label for="input__text4" class="valid">Valid</label>
-      <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
+      <label for="input__text4" class="valid">מה תרצו לספר על העסק שלכם?</label>
+      <input id="Msg" class="is-valid" type="text" placeholder="כתוב">
     </p>
    
 
@@ -118,10 +84,55 @@
     <br>
    
       <label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> אני קראתי ואני מאשר את התקנון</label>
-
+    <button id="addBtn">Submit</button>
     
   </fieldset>
 
 
+
+
+
+
+
+
+
+  <!-- FIREBASE -------------------------------------------------------------------------------------->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAk4bsLIcI7jf9V_DqkZIo26MV4hUSPCwg",
+    authDomain: "wepo4u-team-22.firebaseapp.com",
+    projectId: "wepo4u-team-22",
+    storageBucket: "wepo4u-team-22.appspot.com",
+    messagingSenderId: "854120996905",
+    appId: "1:854120996905:web:4c6ec454ae611005797c38",
+    measurementId: "G-R8XJ878M82"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+<!-- FIREBASE - end--------------------------------------------------------------------------------------- -->
+
+
+<!-- JS file -->
+
+<script src="BusinessPageJS.js"></script>
+
+
+<!-- JS files - end  -->
 </body>
 </html>
