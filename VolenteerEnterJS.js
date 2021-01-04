@@ -1,4 +1,6 @@
-console.log("test")
+console.log("test");
+
+
 
 
 
@@ -39,17 +41,14 @@ const auth = firebase.auth();
       location.replace("OldmanSignUp.html")
     }
 
-    /*
-    firebase.auth().onAuthStateChanged(function(user) {
+
+    function change(){
+      location.replace("ChooseVol.html");
+    }
+    auth.onAuthStateChanged(user => {
       if (user) {
-        // User is signed in.
-        
-        alert("משתמש מחובר :" + email.value)
-        location.replace("OldmanEnter.html")
+        console.log(user);
       } else {
-        // No user is signed in.
-        alert("2משתמש לא מחובר !")
-        
+        console.log('user logged out');
       }
-    });
-    */
+    })
