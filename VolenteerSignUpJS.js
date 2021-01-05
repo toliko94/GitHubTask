@@ -1,19 +1,30 @@
 alert("testvol");
 
 
+
+
+
   //SingUp - Function
 
     function signUp()
     {
        
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-
-   
+      
+      var email = document.getElementById("email");
+      var password = document.getElementById("password");
+      if (validate() == true)
+      {
         alert("תודה שהצטרפת :)");
 
-        registerNewUser(email.value,password.value)
-    }
+        registerNewUser(email.value,password.value);
+      
+      }
+      else
+      {
+        alert("back to page");
+        
+      }
+  }
   
 
     function registerNewUser(email,password)
@@ -91,3 +102,15 @@ alert("testvol");
         
       }
     });
+
+    function validate(){
+      var remember = document.getElementById('vehicle1');
+      if (remember.checked){
+          
+          return true;
+      }else{
+          alert("אנא אשר את התקנון")
+          return false;
+      }
+    }
+    

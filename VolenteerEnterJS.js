@@ -4,7 +4,7 @@ console.log("test");
 
 
 
-const auth = firebase.auth();
+
 
   //SingUp - Function
 
@@ -38,7 +38,7 @@ const auth = firebase.auth();
     {
       auth.signOut();
       alert("התנתקת !")
-      location.replace("OldmanSignUp.html")
+      
     }
 
 
