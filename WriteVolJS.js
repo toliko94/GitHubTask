@@ -1,4 +1,5 @@
-console.log(firebase)
+//
+console.log(firebase) 
 
 const user = firebase.auth.currentUser;
 const requestRef = database.ref('/VolRequest');

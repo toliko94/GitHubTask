@@ -1,6 +1,7 @@
 console.log(firebase)
 console.log(database)
 console.log(auth)
+//
 
 
 

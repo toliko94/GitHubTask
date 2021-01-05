@@ -1,8 +1,12 @@
 
+<<<<<<< HEAD
 
 
 
 
+=======
+//
+>>>>>>> Toli
   //SingUp - Function
 
     function signUp()
