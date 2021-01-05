@@ -1,4 +1,4 @@
-alert("volenteer");
+
 
 
 
@@ -21,7 +21,7 @@ alert("volenteer");
       }
       else
       {
-        alert("back to page");
+       
         
       }
   }
@@ -31,6 +31,7 @@ alert("volenteer");
     {
         auth.createUserWithEmailAndPassword(email, password).then((loggedUser) => {
             // Signed in with email and password, now insert details to DB
+            var points =0
             var userId = loggedUser.user.uid
             var firstName = document.getElementById("firstName").value
             var lastName = document.getElementById("lastName").value
@@ -40,12 +41,15 @@ alert("volenteer");
                 email: email,
                 firstName: firstName,
                 lastName: lastName,
-                password: password
+                password: password,
+                points: points
+                
             }
             //insert user details to DB
             console.log("writen3")
             writeUserData(newUser, userId)
             console.log("writen4")
+            
         })
             .catch((error) => {
                 var errorCode = error.code;
@@ -61,7 +65,7 @@ alert("volenteer");
                 if (error) {
                     alert("Something went wrong..." + error.errorMessage)
                 } else {
-                    alert("Sign up complete!")
+                    alert("ההרשמה הסתיימה בהצלחה!")
                     location.replace("VolenteerEnter.html")
                     
                 }
@@ -94,12 +98,12 @@ alert("volenteer");
       if (user) {
         // User is signed in.
         
-        alert("משתמש מחובר :" )
-        location.replace("VolenteerEnter.html");
+        alert("משתמש מחובר :" +user.email )
+        
         
       } else {
         // No user is signed in.
-        alert("משתמש לא מחובר3 !")
+        alert("משתמש לא מחובר !")
         
       }
     });
