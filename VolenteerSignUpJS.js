@@ -1,4 +1,4 @@
-alert("testvol");
+alert("volenteer");
 
 
 
@@ -95,6 +95,7 @@ alert("testvol");
         // User is signed in.
         
         alert("משתמש מחובר :" )
+        location.replace("VolenteerEnter.html");
         
       } else {
         // No user is signed in.
