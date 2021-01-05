@@ -1,17 +1,12 @@
 
-<<<<<<< HEAD
 
 
 
 
-=======
-//
->>>>>>> Toli
   //SingUp - Function
 
     function signUp()
     {
-<<<<<<< HEAD:OldmanSignUpJS.js
 
      
     var email = document.getElementById("email");
@@ -29,25 +24,6 @@
       alert("מרענן דף .. אנא מלא את הפרטים מחדש");
       location.replace("OldmanSignUp.html")
     }
-=======
-       
-      
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-      if (validate() == true)
-      {
-        alert("תודה שהצטרפת :)");
-
-        registerNewUser(email.value,password.value);
-      
-      }
-      else
-      {
-        alert("back to page");
-        
-      }
-  }
->>>>>>> Boaz:VolenteerSignUpJS.js
   
 
     function registerNewUser(email,password)
@@ -130,7 +106,6 @@
       }
     });
 
-<<<<<<< HEAD:OldmanSignUpJS.js
 
     //check that the checkbox is checked
     function validate(){
@@ -146,16 +121,3 @@
           return false;
       }
   }}
-=======
-    function validate(){
-      var remember = document.getElementById('vehicle1');
-      if (remember.checked){
-          
-          return true;
-      }else{
-          alert("אנא אשר את התקנון")
-          return false;
-      }
-    }
-    
->>>>>>> Boaz:VolenteerSignUpJS.js
