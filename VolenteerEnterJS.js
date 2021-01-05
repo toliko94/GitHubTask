@@ -38,6 +38,7 @@ console.log("test");
     {
       auth.signOut();
       alert("התנתקת !")
+      location.replace("VolenteerSignUp.html")
       
     }
 

@@ -4,7 +4,7 @@ const database = firebase.database();
 const usersRef = database.ref('/Volenteering');
 const Send = document.getElementById('Send');
 const user = firebase.auth().currentUser;
-alert(user);
+
 
 
   function catchitems(){
@@ -44,7 +44,7 @@ alert(user);
 
 
 function writeUserData(user, userId,test) {
-    database.ref('Volemteriing/' + test).set(user, (error) => {
+    database.ref('Volenteering/' + test).set(user, (error) => {
         if (error) {
             alert("Something went wrong..." + error.errorMessage)
         } else {
@@ -60,8 +60,15 @@ if (firebase.auth().currentUser === null) {
   }
 
   function checking (test){
-    var var1=database.ref('Volemteriing/'+test).place
+    var var1=database.ref('Volenteering/'+test).place
     console.log(var1);
 
+  }
+  function signOut()
+  {
+    auth.signOut();
+    alert("התנתקת !")
+    location.replace("VolenteerSignUp.html")
+    
   }
   
