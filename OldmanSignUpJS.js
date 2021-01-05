@@ -1,5 +1,5 @@
 
-
+//
   //SingUp - Function
 
     function signUp()

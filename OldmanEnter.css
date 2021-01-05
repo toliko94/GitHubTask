@@ -98,7 +98,8 @@ nav a:hover::before {
   .p1{
       background-color: lightslategray;
       
-      color:black;
+      color:rgba(0, 0, 0, 0.87);
       margin-left: 30%;
       margin-right: 28%;
+      
   }
