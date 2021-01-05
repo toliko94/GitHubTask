@@ -139,7 +139,8 @@ let send = document.getElementById('SubmitBtn');
         else
         {
             alert("לא הוקשה בחירת סוג ההתנדבות")
-            location.replace("WriteVol.html")        }
+            location.replace("WriteVol.html")     
+        }
 
 
         
@@ -153,6 +154,7 @@ let send = document.getElementById('SubmitBtn');
         })
 
         console.log("The Data is wriiten to the database")
+        alert("הפרטים נשמרו")
         location.replace("OldmanEnter.html")
         
      

@@ -1,18 +1,25 @@
-alert("test");
 
 
   //SingUp - Function
 
     function signUp()
     {
-       
+
+     
     var email = document.getElementById("email");
     var password = document.getElementById("password");
-
-   
+    var takanon = document.getElementById("takanon");
+    
+    if (validate() == true)
+    {
         alert("תודה שהצטרפת :)");
-
+        
         registerNewUser(email.value,password.value)
+    }
+    else
+    {
+      alert("מרענן דף .. אנא מלא את הפרטים מחדש");
+      location.replace("OldmanSignUp.html")
     }
   
 
@@ -52,7 +59,7 @@ alert("test");
                 if (error) {
                     alert("Something went wrong..." + error.errorMessage)
                 } else {
-                    alert("Sign up complete!")
+                    alert(" ההרשמה הסתיימה!")
                     location.replace("OldmanEnter.html")
                     
                 }
@@ -74,6 +81,8 @@ alert("test");
         
     }
 
+    //sign Out 
+
     function signOut()
     {
       auth.signOut();
@@ -85,11 +94,27 @@ alert("test");
       if (user) {
         // User is signed in.
         
-        alert("משתמש מחובר :" )
+        alert("משתמש מחובר :" + user.email )
         
       } else {
         // No user is signed in.
-        alert("משתמש לא מחובר1 !")
+        alert("משתמש כרגע לא מחובר1 !")
         
       }
     });
+
+
+    //check that the checkbox is checked
+    function validate(){
+      var remember = document.getElementById('takanon');
+      if (remember.checked)
+      {
+          alert("checked") ;
+          return true;
+      }
+      else
+      {
+          alert("אנא לאשר את התקנון לפני ההרשמה ")
+          return false;
+      }
+  }}
