@@ -19,7 +19,7 @@
     else
     {
       alert("מרענן דף .. אנא מלא את הפרטים מחדש");
-      location.replace("OldmanSignUp.html")
+      
     }
   
 
@@ -31,6 +31,7 @@
             var firstName = document.getElementById("firstName").value
             var lastName = document.getElementById("lastName").value
             var phone = document.getElementById("phone").value
+            var addres = document.getElementById("addres").value
     
             var newUser = {
                 userId: userId,
@@ -38,7 +39,8 @@
                 firstName: firstName,
                 lastName: lastName,
                 password: password,
-                phone : phone
+                phone : phone,
+                addres : addres
             }
             //insert user details to DB
             console.log("writen1")
@@ -98,7 +100,7 @@
         
       } else {
         // No user is signed in.
-        alert("משתמש כרגע לא מחובר1 !")
+        alert("משתמש כרגע לא מחובר !")
         
       }
     });
@@ -109,7 +111,7 @@
       var remember = document.getElementById('takanon');
       if (remember.checked)
       {
-          alert("checked") ;
+          alert("התקנון אושר") ;
           return true;
       }
       else
@@ -118,3 +120,17 @@
           return false;
       }
   }}
+
+
+  function signIn()
+    {
+      var email = document.getElementById("email");
+      var password = document.getElementById("password");
+
+       const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+       promise.catch(e => alert(e.message));
+
+        alert("התחברת !" + email.value );
+        location.replace("OldmanEnter.html")
+        
+    }
