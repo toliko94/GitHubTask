@@ -78,21 +78,28 @@
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="Logo.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>
-           
-           toli kot
-            </h2>
-          </div>
-        </div>
-        <div class="w3-container">
+          <!-- Profile Image -->
+         
+         
+         
+          <p style="margin-left: 5%;"><i class="fa fa-image fa-fw w3-margin-right w3-large w3-text-teal"></i>לחץ למטה על מנת לבחור ותמונה ולאחר מכן על הכפתור הירוק </p>
+          <input type="file" id="pimage" class="buttonp">
+          <button class="buttonp2" onclick="UploadImage()">עדכן</button>
+          <img src="Logo.png" id="image" style="width:100%" alt="Avatar">
           
+          
+        </div>
+
+       
+
+        
+        <div class="w3-container">
+          <p><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal" style="font-size: xx-large;"></i>Toli kot</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-          <button onclick="signOut()" id="singIp"> התנתק </button>
-          <button onclick="test()" id="singIp"> check </button>
+          
+          
           <hr>
 
           
@@ -123,6 +130,8 @@
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>בקשת ההתנדבות שלי</h2>
+        <p class="w3-light-grey w3-round-xlarge" style="margin-right: 78%;">  לחץ על נגן על מנת לשמוע הסבר</p>
+        <div><audio controls="">audio</audio></div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>הבקשה שלך כרגע היא </b></h5>
 
@@ -130,7 +139,7 @@
 
           <hr>
         </div>
-        <p class="p1">לחץ על המקש למטה על מנת לבצע סיום מוצלח של ההתנדבות</p>
+        <p class="w3-light-grey w3-round-xlarge" style="margin-left: 30%; margin-right: 27%;" >לחץ על המקש למטה על מנת לבצע סיום מוצלח של ההתנדבות</p>
       
         <a class="button" href="VolenteerSurvey.html">ההתנדבות הסתיימה בהצלחה :)</a>
         
@@ -139,6 +148,9 @@
       <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>פעולות</h2>
         <div class="w3-container">
+          <p class="w3-light-grey w3-round-xlarge" style="margin-right: 78%;">לחץ על נגן על מנת לשמוע הסבר</p>
+          <div><audio controls="">audio</audio></div>
+          <br>
           <h5 class="w3-opacity"><b> <a href="WriteVol.html">לחץ כאן על מנת ליצור בקשה להתנדבות</a>  </b></h5>
           
           
@@ -152,7 +164,13 @@
           <hr>
         </div>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b><a href="WriteVol.html">לחץ כאן על מנת למחוק בקשת להתנדבות   </a></b></h5>
+          <p>אנא כתוב כאן למטה את הסיבה שברצונך לבטל את הבקשה להתנדבות</p>
+          <p>לאחר מכן לחץ על כפתור המחיקהו</p>
+          <textarea id="textarea" rows="4" cols="48" placeholder="כתוב כאן את סיבת המחיקה "></textarea>
+          <br>
+          <button class="buttonD" id="buttonD" > מחיקה </button>
+          
+               
           
           
           <hr>
@@ -164,7 +182,48 @@
           <br>
           <hr>
         </div>
+
+        <div class="w3-container">
+         
+          <button class="buttonL" onclick="signOut()" id="singIp"> התנתק </button>
+          <br>
+          <hr>
+        </div>
+
+
+        <div class="w3-container">
+         
+         <p>בדיקה</p>
+
+         <button onclick="FetchAllData()"></button>
+
+         <ul id="list">
+            <li>
+            <br>
+            </li>
+         </ul>
+         <br>
+
+         
+       
+          <tr id="tr">
+            <th>Category</th>
+            <br>
+            <th>Name</th>
+            <br>
+            <th>Description</th>
+            <br>
+          </tr>
+       
+
+
+
+          <br>
+          <hr>
+        </div>
       </div>
+
+      
 
     <!-- End Right Column -->
     </div>
@@ -183,7 +242,7 @@
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by Wepo4U Company <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p>Powered by Wepo4U Company <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Wepo4U.co.il</a></p>
 </footer>
 
 
@@ -194,6 +253,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -214,8 +274,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  const auth = firebase.auth()
-  const database = firebase.database()
+  const auth = firebase.auth();
+  const database = firebase.database();
 </script>
 
 
