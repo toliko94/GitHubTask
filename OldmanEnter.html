@@ -94,18 +94,14 @@
 
         
         <div class="w3-container">
-          <p><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal" style="font-size: xx-large;"></i>Toli kot</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-          
-          
-          <hr>
+          <!-- USER INFO WILL BE PRINTED HERE ! -->
+          <div id="root">
 
-          
+          </div>  
+          <hr>
           <br>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>שפות</b></p>
           <p>עברית</p>
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
@@ -130,16 +126,18 @@
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>בקשת ההתנדבות שלי</h2>
-        <p class="w3-light-grey w3-round-xlarge" style="margin-right: 78%;">  לחץ על נגן על מנת לשמוע הסבר</p>
+        <p class="w3-light-grey w3-round-xlarge" style="margin-right: 75%;">  לחץ על נגן על מנת לשמוע הסבר</p>
         <div><audio controls="">audio</audio></div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>הבקשה שלך כרגע היא </b></h5>
 
-          <h1>DATA HERE</h1>
+            
+          <div id="reqInfo"></div>
+          
 
           <hr>
         </div>
-        <p class="w3-light-grey w3-round-xlarge" style="margin-left: 30%; margin-right: 27%;" >לחץ על המקש למטה על מנת לבצע סיום מוצלח של ההתנדבות</p>
+        <p class="w3-light-grey w3-round-xlarge" style="margin-left: 27%; margin-right: 27%;" >לחץ על המקש למטה על מנת לבצע סיום מוצלח של ההתנדבות</p>
       
         <a class="button" href="VolenteerSurvey.html">ההתנדבות הסתיימה בהצלחה :)</a>
         
@@ -148,7 +146,7 @@
       <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>פעולות</h2>
         <div class="w3-container">
-          <p class="w3-light-grey w3-round-xlarge" style="margin-right: 78%;">לחץ על נגן על מנת לשמוע הסבר</p>
+          <p class="w3-light-grey w3-round-xlarge" style="margin-right: 75%;">לחץ על נגן על מנת לשמוע הסבר</p>
           <div><audio controls="">audio</audio></div>
           <br>
           <h5 class="w3-opacity"><b> <a href="WriteVol.html">לחץ כאן על מנת ליצור בקשה להתנדבות</a>  </b></h5>
@@ -177,7 +175,17 @@
         </div>
 
         <div class="w3-container">
-          <h5 class="w3-opacity"><b><a href="WriteVol.html">לחץ כאן על מנת לעדכן פרטים  </a></b></h5>
+          <h5 class="w3-opacity"><b><a >על מנת לעדכן פרטים אנא מלא בתיבה ולחץ עדכן</a></b></h5>
+          <div>
+            <input type="text" placeholder="עדכון מספר פאלפון" id="update_phone">
+            <button id="updateBtnp" class="buttonY">עדכן טלפון</button>
+            <br>
+            <input type="text" placeholder="עדכון כתובת מגורים " id="update_addres">
+            <button id="updateBtna" class="buttonY">עדכן כתובר מגורים</button>
+            
+            <p class="w3-light-grey w3-round-xlarge" style="margin-right: 53%;">על מנת לעדכן אימייל וסיסמה אנא צור איתנו קשר בקישור למטה </p>
+            <a href="ContactUs.html"> לחץ כאן</a>
+          </div>
           
           <br>
           <hr>
@@ -191,36 +199,7 @@
         </div>
 
 
-        <div class="w3-container">
-         
-         <p>בדיקה</p>
-
-         <button onclick="FetchAllData()"></button>
-
-         <ul id="list">
-            <li>
-            <br>
-            </li>
-         </ul>
-         <br>
-
-         
-       
-          <tr id="tr">
-            <th>Category</th>
-            <br>
-            <th>Name</th>
-            <br>
-            <th>Description</th>
-            <br>
-          </tr>
-       
-
-
-
-          <br>
-          <hr>
-        </div>
+        
       </div>
 
       

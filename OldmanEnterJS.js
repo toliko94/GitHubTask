@@ -5,13 +5,39 @@ console.log(auth)
 
 const Msg = document.getElementById('textarea');
 const DelBtn = document.getElementById('buttonD');
+const updateBtnp = document.getElementById('updateBtnp');
+const updateBtna = document.getElementById('updateBtna');
+const userss = database.ref('/OldmanUsers');
+
+const update_phone = document.getElementById('update_phone').value;
+const update_addres = document.getElementById('update_addres').value;
+
+//UPDATE PHONE
+updateBtnp.addEventListener('click', e => {
+  e.preventDefault();
+  userss.child(j).update({
+    phone:update_phone
+  });
+  alert("phoneee !")
+
+});
+
+//UPDATE ADDRES
+updateBtna.addEventListener('click', e => {
+  e.preventDefault();
+  userss.child(j).update({
+    addres:update_addres
+
+  });
+  alert("adresss !")
+});
 
 
 j = 0;
 
 
 
-const usersRef = database.ref('/DeletedRequests');
+const usersRef = database.ref('/DeletedRequests/DeletedOldMan');
 
 
 DelBtn.addEventListener('click', e => {
@@ -38,7 +64,7 @@ DelBtn.addEventListener('click', e => {
             typekey : "נמחק "
         })
   console.log("DATA Updated !")
-  //location.replace("ContactUs.html")
+  location.replace("OldmanEnter.html")
 });
 
 
@@ -78,53 +104,7 @@ function UploadImage()
     })
 }
 
-var stdNo = 0;
 
-function addItemsToList(fname,lname,email,phone)
-{
-  var ul = document.getElementById('list');
-  var header = document.createElement('h2');
-
-  var _fName = document.createElement('li');
-  var _lName = document.createElement('li');
-  var _Email = document.createElement('li');
-  var _Phone = document.createElement('li');
-
-  header.innerHTML = 'user ' + (++stdNo);
-
-  _fName.innerHTML = 'first name :' + fname + ' - ';
-  _lName.innerHTML = 'Last name :' + lname + ' - ';
-  _Email.innerHTML = 'Email  :' + email + ' - ';
-  _Phone.innerHTML = 'Phone  :' + phone + ' - ';
-
-  ul.appendChild(header);
-  ul.appendChild(_fName);
-  ul.appendChild(_lName);
-  ul.appendChild(_Email);
-  ul.appendChild(_Phone);
-
-
-
-  
-
-}
-
-function FetchAllData()
-{
-  firebase.database().ref('OldmanUsers').once('value' , function(snapshot){
-    snapshot.forEach(
-      function(childSnapshot){
-        let fName = childSnapshot.val().firstName;
-        let lName = childSnapshot.val().lastName;
-        let email = childSnapshot.val().email;
-        let phone = childSnapshot.val().phone;
-
-        addItemsToList(fName , lName ,email , phone);
-
-      }
-    );
-  });
-}
 
 
 
@@ -149,6 +129,8 @@ firebase.auth().onAuthStateChanged(function(user) {
    console.log("TAKIN !")
    
    j = user.uid;
+   readUserDetails(j)
+   readUserReq(j);
     
   } else {
     
@@ -157,8 +139,85 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
  
 
+//Function that display the user info in live
+function readUserDetails(userId) {
+  firebase.database().ref('/OldmanUsers/' + userId).once('value').then((snapshot) => {
+      var firstName = snapshot.val().firstName
+      var lastName = snapshot.val().lastName
+      var email = snapshot.val().email
+      var phone = snapshot.val().phone
+      var addres = snapshot.val().addres
+      
+
+      var userDetails = {
+          userId: userId,
+          firstName: firstName,
+          lastName: lastName,
+          phone : phone,
+          email:email,
+          addres:addres
+          
+      }
+      console.log("jason good")
+      console.log(userId)
+      showUser(userDetails)
+
+  });
+}
 
 
+function showUser(userDetails) {
+  document.querySelector('#root').innerHTML += `
+  <div>   <p id="nameid"><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal" style="font-size: xx-large;"></i>${userDetails.firstName} ${userDetails.lastName}</p>
+  
+   <p id="phoneid"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.phone}</p>
+   
+   <p id="emailid"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.email}</p>
+   <p id="addresid"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.addres}</p>
+
+    </div>
+  `
+}
+
+
+// FUNCTION THAT READ AND DISPLAY THE INFORMATION OF THE REQUEST
+function readUserReq(userId) {
+  firebase.database().ref('/VolenterRequests/' + userId).once('value').then((snapshot) => {
+      var place = snapshot.val().place
+      var time = snapshot.val().time
+      var type = snapshot.val().type
+    
+      
+
+      var userDetails = {
+        userId: userId,
+        place: place,
+        time: time,
+        type : type
+        
+         
+          
+      }
+      console.log("jason info good")
+      console.log(userId)
+      showUserInfo(userDetails)
+
+  });
+}
+
+
+function showUserInfo(userDetails) {
+  document.querySelector('#reqInfo').innerHTML += `
+  
+  
+   <p id="phoneid"><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.place}</p>
+   
+   <p id="emailid"><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.time}</p>
+   <p id="addresid"><i class="fa fa-spinner fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${userDetails.type}</p>
+
+    </div>
+  `
+}
 
 
 
