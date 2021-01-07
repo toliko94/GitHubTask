@@ -139,7 +139,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
  
 
-//Function that display the user info in live
+//Function that display the user info in realtime DB
 function readUserDetails(userId) {
   firebase.database().ref('/OldmanUsers/' + userId).once('value').then((snapshot) => {
       var firstName = snapshot.val().firstName
