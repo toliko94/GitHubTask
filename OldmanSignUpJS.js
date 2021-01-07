@@ -70,18 +70,7 @@
   
     //SingIn - Function
 
-    function signIn()
-    {
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-
-       const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-       promise.catch(e => alert(e.message));
-
-        alert("התחברת !" + email.value );
-        location.replace("OldmanEnter.html")
-        
-    }
+  
 
     //sign Out 
 
@@ -91,7 +80,7 @@
       alert("התנתקת !")
       location.replace("XXXXX")
     }
-
+/*
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -104,7 +93,7 @@
         
       }
     });
-
+*/
 
     //check that the checkbox is checked
     function validate(){
@@ -127,10 +116,30 @@
       var email = document.getElementById("email");
       var password = document.getElementById("password");
 
-       const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-       promise.catch(e => alert(e.message));
-
+      var kanes = firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+      .then((user) => {
+        
+        alert("nice !")
         alert("התחברת !" + email.value );
+        location.replace("OldmanEnter.html")
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+       
+      if (error) {
+        alert("Something went wrong..." + error.errorMessage)
+    } else {
+        alert(" !!!!!!!ההרשמה הסתיימה!")
         location.replace("OldmanEnter.html")
         
     }
+
+       // alert("התחברת !" + email.value );
+       // location.replace("OldmanEnter.html")
+        
+    }
+
+
+    
