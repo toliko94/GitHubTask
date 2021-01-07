@@ -37,15 +37,15 @@
 
 <br>
 
-<!-- NAV - BAR -->
+<!-- NAV -- BAR -->
 <div class="contain">
     
   <nav>
         <li><a href="ContactUs.html">צור קשר</a ></li>
         <li><a href="CompanyPolicy.html">תנאי השימוש</a></li>
         <li><a href="BusinessPage.html">עסקים</a></li>
-        <li><a href="VolenteerEnter.html">לפרופיל שלי </a></li>
         
+        <li><a href="VolenteerEnter.html">הפרופיל שלי </a></li>
         
        
  </nav>
@@ -78,37 +78,30 @@
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="Logo.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Jane Doe</h2>
-          </div>
+          <!-- Profile Image -->
+         
+         
+         
+          <p style="margin-left: 5%;font-size: xx-large;color: black;"><i ></i>שלום אדמינים יקרים! </p>
+    
+          <img src="Logo.png" id="image" style="width:100%" alt="Avatar">
+          
+          
         </div>
-        <div  id = "Info" class="w3-container">
-          
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-          <button onclick="signOut()" id="singIp"> התנתק </button>
-          <button onclick="test()" id="singIp"> check </button>
+
+       
+
+        
+        <div class="w3-container">
+          <!-- USER INFO WILL BE PRINTED HERE ! -->
+          <div id="root">
           
 
-
-          
+          </div>  
+          <hr>
           <br>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>עברית</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>רוסית</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>ערבית</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
+   
           <br>
         </div>
       </div><br>
@@ -120,51 +113,84 @@
     <div class="w3-twothird">
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>בקשת ההתנדבות שלי</h2>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-cog fa-spin fa-3x fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>פעולות לאדמין </h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>הבקשה שלך כרגע היא </b></h5>
+          
 
-          <h1>DATA HERE</h1>
+          
+         
+          
 
           <hr>
+          <p class="w3-text-grey w3-padding-16" style="font-size: xx-large;">Search ID by Email</p>
         </div>
+        <div>
+          <textarea style="margin-left: 25%" name="text" id="SearchByEmail" cols="30" rows="1" placeholder="דואר אלקטרוני"></textarea>
+          
+        
+        </div>
+        <button style="margin-left: 0%;" class="button" onclick="Search()"Search>Search volenteer</button>
+        <button class="button" onclick="SearchO()"Search>Search old man</button>
+        <p class="w3-text-grey w3-padding-16" style="font-size: xx-large;">משתמשים מתנדבים:</p>
+
+        <div id="reqInfo"></div>
+        <hr>
+        <p class="w3-text-grey w3-padding-16" style="font-size: xx-large;">משתמשים קשישים:</p>
+
+        <div id="reqInfo2"></div>
+        <hr>
+        <p class="w3-text-grey w3-padding-16" style="font-size: xx-large;">הוספת נקודות למתנדב</p>
+        <textarea style="margin-left: 5%" name="text" id="IDpoints" cols="50" rows="1" placeholder="של המשתמש ID"></textarea>
+
+
+        <textarea style="margin-left: 10%" name="text" id="Addpoints" cols="10" rows="1" placeholder="מס' נקודות"></textarea>
+
+        <button class="button" onclick="AddPoints()"Search>הוסף נקודות</button>
+        <hr>
+        <p class="w3-text-grey w3-padding-16" style="font-size: xx-large;"> ID מחק משתמש מהאתר בעזרת :</p>
+
+
+        <textarea style="margin-left: 20%;" name="text" id="DeletedID" cols="50" rows="1" placeholder="של המשתמש ID"></textarea>
+        <br>
+
+      
+        
+          <button style="margin-left: 0%;" class="button" onclick="DeleteOU()"Search>מחק משתמש מבוגר</button>
+          <button class="button" onclick="DeleteVU()"Search>מחק משתמש מתנדב</button>
+
+          
+       
+
+
+          
+
+
+
+
+
+
+
+
+
+      </div>
+      
+        
+      
+      </div>
+       
+
+
+        <div class="w3-container">
+         
+          <button class="buttonL" onclick="signOut()" id="singIp"> התנתק </button>
+          
+        </div>
+
+
         
       </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>פעולות</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>חיפוש משתמש במאגר הנתונים </b></h5>
-          <div>
-            <textarea name="text" id="SearchByEmail" cols="30" rows="1" placeholder="Enter Email"></textarea>
-            <button onclick="Search()"Search>Search</button>
-            
-
-          </div>
-          
-         
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>עריכת הבקשה שלי</b></h5>
-          <a href="VolenteerSurvey.html">לחץ כאן על מנת ליצור בקשה להתנדבות</a>
-          
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>מחיקת הבקשה שלי</b></h5>
-          <a href="ChooseVol.html">לחץ כאן על מנת ליצור בקשה להתנדבות</a>
-          
-          <hr>
-        </div>
-
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>עריכת הפרטים האישיים שלי</b></h5>
-          <a href="ChooseVol.html">לחץ כאן על מנת ליצור בקשה להתנדבות</a>
-          <br>
-          <hr>
-        </div>
-      </div>
+      
 
     <!-- End Right Column -->
     </div>
@@ -183,7 +209,7 @@
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p>Powered by Wepo4U Company <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Wepo4U.co.il</a></p>
 </footer>
 
 
@@ -194,6 +220,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -216,7 +243,6 @@
   firebase.analytics();
   const auth = firebase.auth();
   const database = firebase.database();
-  
 </script>
 
 
@@ -231,3 +257,7 @@
 <!-- JS files - end  -->
 </body>
 </html>
+
+
+
+
