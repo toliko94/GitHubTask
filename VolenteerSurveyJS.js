@@ -93,6 +93,7 @@ function submitt(){
     console.log("writensurvey1")
     writeUserData(newsub, j)
     console.log("writensurvey2")
+    alert("תודה רבה על השתתפותך בסקר");
 
 
 
