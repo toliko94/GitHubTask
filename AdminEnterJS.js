@@ -1,12 +1,6 @@
   console.log(auth);
   console.log("test");
   var j=0
-  function getuser(user){
-    j=user.uid
-  }
-
-  
-
 
 
   const Userlist = firebase.database().ref('VolenteerUsers');
@@ -18,36 +12,6 @@
 
   //SingUp - Function
 
-    function singUp()
-    {
-       
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-
-
-
-
-
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
-        alert("תודה שהצטרפת :)");
-    }
-  
-  
-    //SingIn - Function
-
-    function signIn()
-    {
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-
-       const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-       promise.catch(e => alert(e.message));
-
-        alert("התחברת !" + email.value );
-        
-    }
-
     function signOut()
     {
       auth.signOut();
@@ -57,22 +21,9 @@
     }
 
 
-    function change(){
-      location.replace("ChooseVol.html");
-    }
-    auth.onAuthStateChanged(user => {
-    
-      if (user) {
-        console.log(user);
-        getuser(user);
-        alert("Check!")
-        readUserDetails(user.uid);
 
 
-      } else {
-        console.log('user logged out');
-      }
-    })
+
    
     function Search ()
     {

@@ -1,33 +1,4 @@
-/*
-function AdminIn()
-{
-  var Admin = document.getElementById('Admin');
-  console.log(Admin.value);
-  if (Admin.value=='Wepo4U2222'){
-    console.log("yes");
 
-    
-    var AdminEmail = 'Wepo4U@gmail.com';
-    var AdminPassword = '123456'
-    console.log(AdminEmail);
-    
-
-     const promise = auth.signInWithEmailAndPassword(AdminEmail, AdminPassword);
-     promise.catch(e => alert(e.message));
-
-      alert("התחברת !" + email.value );
-      
-
-    
-  }
-  else {
-    console.log("no");
-  }
-
-}
-
-
-*/
 
   //SingUp - Function
 
@@ -111,7 +82,7 @@ function AdminIn()
       var kanes = firebase.auth().signInWithEmailAndPassword(email.value, password.value)
       .then((user) => {
         
-        alert("nice !")
+       
         alert("התחברת !" + email.value );
         location.replace("VolenteerEnter.html")
       })
@@ -119,19 +90,7 @@ function AdminIn()
         var errorCode = error.code;
         var errorMessage = error.message;
       });
-       
-      if (error) {
-        alert("Something went wrong..." + error.errorMessage)
-    } else {
-        alert(" !!!!!!!ההרשמה הסתיימה!")
-        location.replace("VolenteerEnter.html")
-        
-    }
-
-       // alert("התחברת !" + email.value );
-       // location.replace("OldmanEnter.html")
-        
-    }
+    }   
 
 
     function signOut()
@@ -140,26 +99,7 @@ function AdminIn()
       alert("התנתקת !")
       location.replace("XXXXX")
     }
-  /*
-      
-      */
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        var AdminEmail = 'wepo4U@gmail.com';
-        alert(user.email);
-        
-        alert("224משתמש מחובר :" +user.email )
-        
 
-    
-        
-      } else {
-        // No user is signed in.
-        alert("223משתמש לא מחובר !")
-        
-      }
-    });
 
     function validate(){
       var remember = document.getElementById('vehicle1');

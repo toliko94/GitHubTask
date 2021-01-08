@@ -19,8 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   
   if (user) {
     // User is signed in.
-    alert("Allgood");
-    alert(user.uid);
+    alert("המשתמש המחובר: " + user.uid );
     getuser(user);
   
 
@@ -151,7 +150,7 @@ function showUser(userDetails) {
   `
 }
 
-
+/*
 
     // FUNCTION THAT READ AND DISPLAY THE INFORMATION OF THE REQUEST
 function readUserReq(userId) {
@@ -222,3 +221,4 @@ DelBtn.addEventListener('click', e => {
   console.log("DATA Updated !")
   location.replace("VolenteerEnter.html")
 });
+*/
