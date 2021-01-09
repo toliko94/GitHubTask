@@ -24,6 +24,8 @@ const user = firebase.auth().currentUser;
             console.log("writen11")
             writeUserData(newsub, user,test)
             console.log("writen22")
+            write2history(newsub,user,test)
+            console.log("writen33")
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -43,14 +45,24 @@ const user = firebase.auth().currentUser;
 }
 
 
-function writeUserData(user, userId,test) {
-    database.ref('Volenteering/' + test).set(user, (error) => {
+function writeUserData(newsub, userId,test) {
+    database.ref('Volenteering/' + test ).set(newsub, (error) => {
         if (error) {
             alert("Something went wrong..." + error.errorMessage)
         } else {
             alert("volenteer chekced!!")
         }
     })
+}
+
+function write2history(newsub, userId,test) {
+  database.ref('VolenteeringHistory/' + test + '/'+Date()).set(newsub, (error) => {
+      if (error) {
+          alert("Something went wrong..." + error.errorMessage)
+      } else {
+          alert("volenteer chekced!!")
+      }
+  })
 }
 
 

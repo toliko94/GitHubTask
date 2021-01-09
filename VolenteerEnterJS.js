@@ -1,4 +1,5 @@
-console.log(auth);
+console.log(auth)
+
 
 
 const Msg = document.getElementById('textarea');
@@ -19,14 +20,11 @@ firebase.auth().onAuthStateChanged(function(user) {
   
   if (user) {
     // User is signed in.
-    alert("המשתמש המחובר: " + user.uid );
-    getuser(user);
+    console.log("המשתמש המחובר: " + user.uid)
   
 
    readUserDetails(user.uid);
    readUserReq(user.uid);
-
-
 
     
   } else {
@@ -150,7 +148,7 @@ function showUser(userDetails) {
   `
 }
 
-/*
+
 
     // FUNCTION THAT READ AND DISPLAY THE INFORMATION OF THE REQUEST
 function readUserReq(userId) {
@@ -161,8 +159,7 @@ function readUserReq(userId) {
     
       
 
-      var userDetails = {
-        userId: userId,
+      var userDetails2 = {
         place: place,
         time: time,
         type : type
@@ -172,7 +169,7 @@ function readUserReq(userId) {
       }
       console.log("jason info good")
       console.log(userId)
-      showUserInfo(userDetails)
+      showUserInfo(userDetails2)
 
   });
 }
@@ -192,33 +189,3 @@ function showUserInfo(userDetails) {
 }
 
 
-const usersRef = database.ref('/DeletedRequests/DeletedVolenteer');
-
-
-DelBtn.addEventListener('click', e => {
-  e.preventDefault();
-  usersRef.child(j).set({
-    
-    Msg:Msg.value
-
-    
-  });
-  console.log("Data Deleted")
-  console.log(Msg.value)
-  console.log(j)
-  alert("בקשתך נמחקה)")
-
-  const Ref = database.ref('/Volenteering');
-
-       Ref.child(j).set({
-            place :  "נמחק ",
-            placekey : "נמחק ",
-            time :  "נמחק ",
-            timekey : "נמחק ",
-            type :  " נמחק",
-            typekey : "נמחק "
-        })
-  console.log("DATA Updated !")
-  location.replace("VolenteerEnter.html")
-});
-*/
