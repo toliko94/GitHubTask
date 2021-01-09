@@ -12,6 +12,8 @@ const userss = database.ref('/OldmanUsers');
 const update_phone = document.getElementById('update_phone').value;
 const update_addres = document.getElementById('update_addres').value;
 
+
+
 //UPDATE PHONE
 updateBtnp.addEventListener('click', e => {
   e.preventDefault();
@@ -36,13 +38,12 @@ updateBtna.addEventListener('click', e => {
 j = 0;
 
 
-
+// event that change/set all the data from begining (like new) + cerat message in the DB
 const usersRef = database.ref('/DeletedRequests/DeletedOldMan');
-
 
 DelBtn.addEventListener('click', e => {
   e.preventDefault();
-  usersRef.child(j).set({
+  usersRef.child(j).set({   //set new message to the DB
     
     Msg:Msg.value
 
@@ -54,7 +55,7 @@ DelBtn.addEventListener('click', e => {
   alert("בקשתך נמחקה)")
 
   const Ref = database.ref('/VolenterRequests');
-
+//setting the new values
        Ref.child(j).set({
             place :  "נמחק ",
             placekey : "נמחק ",
@@ -69,17 +70,17 @@ DelBtn.addEventListener('click', e => {
 
 
 
-
+//function that uploadin image to the STORAGE by ID
 function UploadImage()
 {
-
+//j = jser id
   console.log(j)
   const ref = firebase.storage().ref()
-
+//taking the image id from the html
   const file = document.querySelector("#pimage").files[0]
 
   const name = j
-
+//creating EXTRA data to the image - STORAGE
   const metadata = {
     contentType:file.type,
     customMetadata: {
@@ -90,7 +91,7 @@ function UploadImage()
     }
     
   }
-
+//ref
   const task = ref.child(name).put(file,metadata)
 
   task
@@ -105,8 +106,26 @@ function UploadImage()
 }
 
 
-
-
+// function that run at the beggining of the load and display the image from the gallery
+const storageRef = firebase.storage().ref();
+function displayProfilepic(userId)
+{
+  storageRef.child(userId).getDownloadURL().then(function(url) {
+    // `url` is the download URL for 'images/stars.jpg'
+  
+    // This can be downloaded directly:
+   
+    // Or inserted into an <img> element:
+    var img = document.getElementById('image');
+    img.src = url;
+    console.log("image downloaded URL is :")
+    console.log(url)
+    console.log("to this id :")
+    console.log(userId)
+    
+  }).catch(function(error) {
+    // Handle any errors
+  });}
 
 
 
@@ -131,6 +150,8 @@ firebase.auth().onAuthStateChanged(function(user) {
    j = user.uid;
    readUserDetails(j)
    readUserReq(j);
+   displayProfilepic(j);
+   displayNumofCompletedReq();
     
   } else {
     
@@ -217,7 +238,58 @@ function showUserInfo(userDetails) {
 
     </div>
   `
+  console.log("completed")
 }
 
 
 
+//function that display the SUM of all the compledte OLDMANREQUEST
+
+var numReq;
+function displayNumofCompletedReq() {
+  firebase.database().ref('/CounterReq').once('value').then((snapshot) => {
+      var _CounterReq = snapshot.val()
+      numReq = _CounterReq;
+      console.log("this is value")      
+      console.log(_CounterReq)   
+      
+
+       
+
+     
+      console.log("jason good")
+      
+     // showU()
+     document.querySelector('#numReq').innerHTML += `
+  
+  
+     <p style="margin-left: 43%;" id="phoneid"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${_CounterReq} :כמות התנדבויות שבוצעו  </p>
+     
+     
+      </div>
+    `
+
+  });
+}
+
+//function that increase the counter of the num Requests by 1 
+function UpdateNumReq()
+{
+ var newnumReq = numReq + 1;
+ database.ref('CounterReq').set(newnumReq, (error) => {
+  if (error)
+   {
+      alert("Something went wrong..." + error.errorMessage)
+   }
+   else
+   {
+     alert("updated to" + newnumReq)
+     location.replace("VolenteerSurvey.html")
+   }
+      
+      
+  
+})
+
+  
+}

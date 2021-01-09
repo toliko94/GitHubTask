@@ -1,11 +1,28 @@
-j=0
+var userId;
+var counter;      
+
+//when the page upload this function run first + 
+//update var userId to the user id that logdin
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+     
+     userId = user.uid;
+     console.log("User var updated!")
+     console.log(userId);
+
+      
+    } else {
+      alert("EROOR")
+      // No user is signed in.
+    }
+  });
 
 
-
-window.onload = function(){
-
+function readCounter()
+{
     
 }
+
 
 
 
@@ -28,6 +45,7 @@ auth.onAuthStateChanged(user =>{
     if (user){
     j=user.uid
     console.log(user)
+    displayNumofCompletedReq();
     }
     else
     alert("user not online")
@@ -119,4 +137,32 @@ function submitt(){
 
     
 
+}
+
+
+var numReq;
+function displayNumofCompletedReq() {
+  firebase.database().ref('/CounterReq').once('value').then((snapshot) => {
+      var _CounterReq = snapshot.val()
+      numReq = _CounterReq;
+      console.log("this is value")      
+      console.log(_CounterReq)   
+      
+
+       
+
+     
+      console.log("jason good")
+      
+     // showU()
+     document.querySelector('#numReq').innerHTML += `
+  
+  
+     <p style="margin-left: 43%;" id="phoneid"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${_CounterReq} :כמות התנדבויות שבוצעו  </p>
+     
+     
+      </div>
+    `
+
+  });
 }
