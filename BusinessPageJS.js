@@ -25,10 +25,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
    
     FetchAllData()
+    displayNumofCompletedReq()
 
     
   } else {
     FetchAllData()
+    displayNumofCompletedReq()
   }
 });
 
@@ -205,3 +207,32 @@ function sorry()
 {
   alert("סליחה אבל האפשרות לא קיימת כרגע ..")
 }
+
+var numReq;
+function displayNumofCompletedReq() {
+  firebase.database().ref('/CounterReq').once('value').then((snapshot) => {
+      var _CounterReq = snapshot.val()
+      numReq = _CounterReq;
+      console.log("this is value")      
+      console.log(_CounterReq)   
+      
+
+       
+
+     
+      console.log("jason good")
+      
+     // showU()
+     document.querySelector('#numReq').innerHTML += `
+  
+  
+     <p style="margin-left: 43%;" id="phoneid"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw w3-margin-right w3-large w3-text-teal"></i>${_CounterReq} :כמות התנדבויות שבוצעו  </p>
+     
+     
+      </div>
+    `
+
+  });
+}
+
+
